@@ -18,7 +18,7 @@
 ## Upload the CSR to APEX for Signing
 1. Upload the CSR to APEX App.
 2. Download the Signed Certificate from APEX.
-3. Make sure that the ie name is set to the filename set in the parameters file. i.e. filename.cer
+3. Make sure that the cert file name is set to the filename set in the parameters file. i.e. fileName.cer
 4. Execute generateP12.sh
 ```text
 ./generateP12.sh myL2Cert.sh
