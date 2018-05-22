@@ -1,8 +1,10 @@
 #!/bin/bash
 
+configFile=${1}
+
 # setup the environment
 function prop {
-    grep -w "${1}" parameters.config|cut -d'=' -f2
+    grep -w "${1}" $configFile|cut -d'=' -f2
 }
 
 # Generate new PKI key pair, with key encryption - pcks1

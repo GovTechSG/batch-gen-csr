@@ -4,7 +4,7 @@
 1. Update parameters.config with your configurations
 2. Execute generateCsr.sh will generate the private key and certificate signing request
 ```text
-./generateCsr.sh
+./generateCsr.sh {configFileName}.config
 ```
 3. The following files will be generated;
     - fileName.key
