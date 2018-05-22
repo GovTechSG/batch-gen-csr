@@ -18,11 +18,12 @@
 1. Upload the CSR to APEX App.
 2. Download the Signed Certificate from APEX.
 3. Make sure that the cert file name is set to the filename set in the parameters file. i.e. fileName.cer
-4. Execute generateP12.sh will generate the keystore in P12,PEM and JKS format
+4. Copy the file to the same folder of the csr file
+5. Execute generateP12.sh will generate the keystore in P12,PEM and JKS format
 ```text
-./generateP12.sh
+./generateP12.sh {configFileName}.config
 ```
-5. The following files will be generated;
+6. The following files will be generated;
     - fileName.public.pem
     - fileName.p12
     - fileName.private.pem
