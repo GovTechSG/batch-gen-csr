@@ -7,13 +7,23 @@ git clone https://github.com/lim-ming-tat/batch-gen-csr.git
 ```
 2. Duplicate parameters.config with a new file name and update with new configuration.
 ```text
-cp parameters.config fileName.config
+cp parameters.config <fileName>.config
 ```
-3. Execute generateCsr.sh will generate the private key and certificate signing request
+3. Inside <fileName>.config, modify all the required parameters on the right column
 ```text
-./generateCsr.sh fileName.config
+fileName=<change this>
+.
+.
+p12Password=<change and remember this for next step>
+.
+.
+more ...
 ```
-4. The following files will be generated;
+4. Execute generateCsr.sh will generate the private key and certificate signing request
+```text
+./generateCsr.sh <fileName>.config
+```
+5. The following files will be generated;
     - fileName.key
     - fileName.nopass.key
     - fileName.pkcs8.key
@@ -24,8 +34,8 @@ cp parameters.config fileName.config
 ## Upload the CSR to APEX for Signing
 1. Upload the CSR to APEX App.
 2. Download the Signed Certificate from APEX.
-3. Make sure that the cert file name is set to the filename set in the parameters file. i.e. fileName.cer
-4. Copy the file to the same folder of the csr file
+3. Change the cert file name downloaded to <fileName>.cer, by default it is certificate.cer
+4. Copy the file to the same folder of the csr file (this project folder)
 5. Execute generateP12.sh will generate the keystore in P12,PEM and JKS format
 ```text
 ./generateP12.sh fileName.config
