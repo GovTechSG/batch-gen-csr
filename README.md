@@ -46,3 +46,4 @@ more ...
     - fileName.private.pem
     - fileName.nopass.pem
     - fileName.jks
+7. Use those keystore files (.pem, .p12, .jks - generated for Test Client or your client program to consume)
