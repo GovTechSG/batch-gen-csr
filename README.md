@@ -11,7 +11,7 @@ cp parameters.config <fileName>.config
 ```
 3. Inside <fileName>.config, modify all the required parameters on the right column
 ```text
-fileName=<change this>
+fileName=<change this and the rest>
 .
 .
 p12Password=<change and remember this for next step>
@@ -38,7 +38,7 @@ more ...
 4. Copy the file to the same folder of the csr file (this project folder)
 5. Execute generateP12.sh will generate the keystore in P12,PEM and JKS format
 ```text
-./generateP12.sh fileName.config
+./generateP12.sh <fileName>.config
 ```
 6. The following files will be generated;
     - fileName.public.pem
@@ -46,4 +46,4 @@ more ...
     - fileName.private.pem
     - fileName.nopass.pem
     - fileName.jks
-7. Use those keystore files (.pem, .p12, .jks - generated for Test Client or your client program to consume)
+7. Use those keystore files (.pem, .p12, .jks generated for Test Client or your client program to consume)
