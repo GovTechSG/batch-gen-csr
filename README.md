@@ -3,7 +3,7 @@
 ## Generate the CSR
 1. Execute git command to get the scripts files
 ```text
-git clone https://github.com/lim-ming-tat/batch-gen-csr.git
+git clone https://github.com/GovTechSG/batch-gen-csr.git
 ```
 2. Duplicate parameters.config with a new file name and update with new configuration.
 ```text
