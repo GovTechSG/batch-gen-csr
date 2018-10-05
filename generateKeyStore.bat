@@ -19,4 +19,4 @@ openssl.exe pkcs12 -export -clcerts -in %fileName%.public.pem -inkey %fileName%.
 openssl.exe pkcs12 -in %fileName%.p12 -passin pass:%p12Password% -out %fileName%.private.pem -passout pass:%pemPassword% -clcerts
 
 #Generate pem file without password
-openssl.exe rsa -in %fileName%.private.pem -passin pass:%pemPassword% -out %fileName%.nopass.pem
+openssl.exe rsa -in %fileName%.private.pem -passin pass:%pemPassword% -out %fileName%.nopass.pem 
