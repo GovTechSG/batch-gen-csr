@@ -15,3 +15,4 @@ openssl.exe genrsa -aes256 -out %fileName%.key -passout pass:%keyPassword% 2048
 
 #Generate Certificate Signing Request
 openssl-exe req -new -key %fileName%.key -passin pass:%keyPassword% -out %fileName%.csr -sha256 -subj "/C=SG/ST=%stateName%/L=%localityName%/O=%organisationName%/OU=%organisationUnit%/CN=%commonName%"
+ 
