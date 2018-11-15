@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 configFile=${1}
 
@@ -35,5 +35,4 @@ openssl req -new \
     -key $(prop 'fileName').key \
     -passin pass:$(prop 'keyPassword') \
     -out $(prop 'fileName').csr \
-    -subj "/C=SG/ST=$(prop 'stateName')/L=$(prop 'localityName')/O=$(prop 'organizationName')/OU=$(prop 'organizationUnit')/CN=$(prop 'commonName')/emailAddress=$(prop 'email')"
     -subj "$subject"
