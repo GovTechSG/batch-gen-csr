@@ -22,9 +22,18 @@ openssl pkcs8 -topk8 -in $(prop 'fileName').nopass.key -out $(prop 'fileName').n
 # convert pkcs1 to pkcs8 with passphrase
 openssl pkcs8 -topk8 -in $(prop 'fileName').nopass.key -out $(prop 'fileName').pkcs8.key -passout pass:$(prop 'keyPassword')
 
+
+# Generate Subject according to OSTYPE
+if [[ "$OSTYPE" == "msys" ]]; then #MinGW
+    subject="//emailAddress=$(prop 'email')\C=SG\ST=$(prop 'stateName')\L=$(prop 'localityName')\O=$(prop 'organizationName')\OU=$(prop 'organizationUnit')\CN=$(prop 'commonName')"
+else
+    subject="/emailAddress=$(prop 'email')/C=SG/ST=$(prop 'stateName')/L=$(prop 'localityName')/O=$(prop 'organizationName')/OU=$(prop 'organizationUnit')/CN=$(prop 'commonName')"
+fi
+
 # Generate Signing Request
 openssl req -new \
     -key $(prop 'fileName').key \
     -passin pass:$(prop 'keyPassword') \
     -out $(prop 'fileName').csr \
     -subj "/C=SG/ST=$(prop 'stateName')/L=$(prop 'localityName')/O=$(prop 'organizationName')/OU=$(prop 'organizationUnit')/CN=$(prop 'commonName')/emailAddress=$(prop 'email')"
+    -subj "$subject"
