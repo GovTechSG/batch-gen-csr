@@ -30,6 +30,10 @@ more ...
     - fileName.pkcs8.nopass.key
     - fileName.public.key
     - fileName.csr
+6. Verify generated `.csr` file. Especially the `Data > Subject` property.
+```text
+./verifyCsr.sh <fileName>.config
+```
 
 ## Upload the CSR to APEX for Signing
 1. Upload the CSR to APEX App.
