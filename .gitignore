@@ -1,1 +1,7 @@
 alpha/*
+*.csr
+*.key
+*.cer
+*.p12
+*.pem
+*.jks
